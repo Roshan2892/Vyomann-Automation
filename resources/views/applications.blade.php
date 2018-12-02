@@ -6,32 +6,27 @@
     <img src="{{ asset('images/applications 1920x360.png') }}" alt="Vyomann" style="width:100%;">
       <!--2nd banner ends-->
     <!--gallery starts-->
-    <div class="gallery cf">
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" />
-        </div>
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" />
-        </div>
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" />
-        </div>
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" />
-        </div>
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" />
-        </div>
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" />
-        </div>
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" /> 
-        </div>
-        <div>
-            <img src="{{ asset('images/fst.jpg') }}" />
-        </div>
-    </div>
+    <!-- <div class="gallery cf">
+        <img src="{{ asset('images/fst.jpg') }}" width="300px"/>
+        <img src="{{ asset('images/fst.jpg') }}" width="300px" />
+        <img src="{{ asset('images/fst.jpg') }}" width="300px" />
+        <img src="{{ asset('images/fst.jpg') }}" width="300px" />
+        <img src="{{ asset('images/fst.jpg') }}" width="300px" />
+        <img src="{{ asset('images/fst.jpg') }}" width="300px" />
+        <img src="{{ asset('images/fst.jpg') }}" width="300px" /> 
+        <img src="{{ asset('images/fst.jpg') }}" width="300px" />
+    </div> -->
+
+    <div style="white-space:nowrap;">
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+</div>
     <!--gallery ends-->
 @endsection
 
