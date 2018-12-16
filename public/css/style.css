@@ -161,9 +161,7 @@ input:focus, textarea:focus {
   margin-top:7px;
 }	
 
-.submit:hover .ease{
- 
-}
+.submit:hover .ease{}
 
 @media only screen and (max-width: 580px) {
   .logo{text-align: center;}
@@ -244,13 +242,13 @@ h1 {
 
 .featured-image-outer {
   position: absolute;
-  margin-left: -4%;
-  min-height: 360px;
+  margin-left: -8%;
+  height: 360px;
   overflow: hidden;
-  width:44%;
-  -ms-transform: skew(-15deg,0deg); /* IE 9 */
-  -webkit-transform: skew(-15deg,0deg); /* Safari */
-  transform: skew(-15deg,0deg); /* Standard syntax */
+  width: 100%;
+  -ms-transform: skew(-13deg,0deg); /* IE 9 */
+  -webkit-transform: skew(-13deg,0deg); /* Safari */
+  transform: skew(-13deg,0deg); /* Standard syntax */
 }
 
 .featured-image-inner,
@@ -265,32 +263,32 @@ h1 {
 }
 
 .featured-image-inner {
-  left: 50px;
+  left: 41px;
   position: absolute;
   top: 0;
   height: 360px;
   width: 100%;
-  background: #aeb2b5;
-  -ms-transform: skew(15deg,0deg); /* IE 9 */
-  -webkit-transform: skew(15deg,0deg); /* Safari */
-  transform: skew(15deg,0deg); /* Standard syntax */
+  background: #cccccc;
+  -ms-transform: skew(13deg,0deg); /* IE 9 */
+  -webkit-transform: skew(13deg,0deg); /* Safari */
+  transform: skew(13deg,0deg); /* Standard syntax */
 }
 
 .featured-image-inner img{
-  height: 100%; padding: 5% 5% 5% 10%;
+  height: 100%; 
 }
 
 .two-images-outer {
   min-height: 360px;
   overflow: hidden;
   position: relative;
-  right: -40%;
+  right: 6%;
   top: 0;
-  width: 68%;
+  width: 117%;
   margin: 0px 0px 0px 5px;
-  -ms-transform: skew(-15deg,0deg);
-  -webkit-transform: skew(-15deg,0deg);
-  transform: skew(-15deg,0deg);
+  -ms-transform: skew(-13deg,0deg);
+  -webkit-transform: skew(-13deg,0deg);
+  transform: skew(-13deg,0deg);
 }
 .two-images-inner {
   position: absolute;
@@ -299,11 +297,38 @@ h1 {
   width: 100%;
   background: #313436;
   color: #fff;
-  -ms-transform: skew(15deg,0deg); /* IE 9 */
-  -webkit-transform: skew(15deg,0deg); /* Safari */
-  transform: skew(15deg,0deg); /* Standard syntax */
+  -ms-transform: skew(13deg,0deg); /* IE 9 */
+  -webkit-transform: skew(13deg,0deg); /* Safari */
+  transform: skew(13deg,0deg); /* Standard syntax */
 }
 
-.product-container { width: 100%; overflow: hidden; margin: 5px 0 5px 0;}
-.product-desc { width: 70%; text-align: center; margin: 5% 0 0 20%; }
+.product-container {overflow: hidden; margin: 5px 0 5px 0;}
+.product-desc { width: 76%; text-align: center; margin: 5% 0 0 20%; }
 .product-desc p{ margin-top: 40px;font-size: 15px; }
+
+@media (min-width: 320px) and (max-width: 480px)  {
+  .featured-image-outer{
+    position: relative;
+    width: 100%;
+    margin: 0px;
+    -ms-transform: skew(0deg,0deg); /* IE 9 */
+    -webkit-transform: skew(0deg,0deg); /* Safari */
+    transform: skew(0deg,0deg); /* Standard syntax */
+  }
+
+  .featured-image-inner {
+    left: 0px;
+    -ms-transform: skew(0deg,0deg); /* IE 9 */
+    -webkit-transform: skew(0deg,0deg); /* Safari */
+    transform: skew(0deg,0deg); /* Standard syntax */
+  }
+
+  .featured-image-inner img {
+    height: auto;
+    padding: 10%;
+  }
+  
+  .two-images-outer{
+    overflow: initial;
+  }
+}
