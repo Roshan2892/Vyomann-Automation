@@ -10,39 +10,38 @@
         <div class="row">
             <div class="col-md-6">
                 <form class="contact_form" id="contact_form">
-                    <p class="name">
-                        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder=       "Name" id="name" />
-                    </p>
-                    <p class="tel">
-                        <input type="tel" name="telephone" id="telephone" placeholder="Mobile" tabindex="4" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input">
-                    </p>
-                    <p class="email">
-                        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
-                    </p>
-                    <p class="description">
-                        <textarea name="description" rows="6" class="validate[required,custom[description]] feedback-input" id="description" placeholder="Description"></textarea>
-                    </p>
-                    <p class="description">
-                        <input type="submit" value="DONE" id="button-blue"/>
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="telephone" id="telephone" placeholder="Mobile" tabindex="4" class="form-control validate[required,custom[onlyLetter],length[0,100]] feedback-input">
+                    </div>
+                    <div class="form-group">
+                        <input name="email" type="text" class="form-control validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" rows="6" class="form-control validate[required,custom[description]] feedback-input" id="description" placeholder="Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="form-control" value="DONE" id="button-blue"/>
                         <div class="ease"></div>
-                    </p>
+                    </div>
                 </form>
             </div>
             <div class="col-md-6">
                 <div class="details">
                     <ul class="list-unstyled">
-                        <li>+91 88289 66266</li>
-                        <li><a href="mailto:vyomannautomation@gmail.com">vyomannautomation@gmail.com</a></li>
-                        <li><a href="{{ route('home') }}">www.vyomannautomation.com</a></li>
-                        <li>B/41, Shukla Compound, <br> Shiv Vallabh Cross Road,<br>
-                        Rawal Pada, Dahisar(E), <br>Mumbai - 400068</li>
+                        <li><span style="font-size:20px; color:#F60;"><i class="fas fa-mobile-alt"></i></span> &nbsp  &nbsp  &nbsp +91 88289 66266</li>
+                        <li><span style="font-size:20px; color:#F60;"><i class="fas fa-envelope"></i></span><a href="mailto:vyomannautomation@gmail.com"> &nbsp  &nbsp vyomannautomation@gmail.com</a></li>
+                        <!-- <li><span style="font-size:20px; color:#F60;"><i class="fas fa-globe"></i></span><a href="index.html"> &nbsp www.vyomannautomation.com</a></li> -->
+                        <li><span style="font-size:20px; color:#F60;"><i class="fas fa-home"></i></span> &nbsp  &nbsp B/41, Shukla Compound,
+                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Shiv Vallabh Cross Road,
+                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Rawal Pada, Dahisar(E), 
+                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mumbai - 400068.</li>
                     </ul>
                 </div>
             </div>
         </div>
-</div>
-
-    </div><!--container3 ends-->
+    </div>
 @endsection
-
 @section('js') @endsection

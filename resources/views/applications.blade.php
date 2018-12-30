@@ -17,15 +17,32 @@
         <img src="{{ asset('images/fst.jpg') }}" width="300px" />
     </div> -->
 
-    <div style="white-space:nowrap;">
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
-<img src="{{ asset('images/fst.jpg') }}" style="margin: 0; width: 158px;" />
+    <div class="gallery cf">
+  <div>
+    <img src="images/main1.png" class="responsive"/>
+  </div>
+  <div>
+    <img src="images/Tea.png" class="responsive"/>
+  </div>
+   <div>
+    <img src="images/kitchen.png" class="responsive"/>
+  </div>
+  <div>
+    <img src="images/card.png" class="responsive"/>
+  </div>
+  <div>
+    <img src="images/nerolac.png" class="responsive"/>
+  </div>
+  <div>
+    <img src="images/bottle.png" class="responsive"/>
+  </div>
+  <div>
+    <img src="images/stationery.png" class="responsive"/>
+  </div>
+  <div>
+    <img src="images/pipe.png" class="responsive"/>
+  </div>
+   
 </div>
     <!--gallery ends-->
 @endsection

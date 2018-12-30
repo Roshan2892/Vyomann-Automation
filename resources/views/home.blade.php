@@ -41,7 +41,11 @@
       <!--2nd banner ends-->
       <!--content starts-->
       <div class="content">
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+         Vyomann Automation is the pioneer in manufacturing and supplying of hot stamping and heat transfer machines. Vyomann Automation provides end to end solution for all your requirement related to heat transfer process with a backing of reseach and development center and well skilled servicing team for post-installation issues. 
+         <br>
+         Our economical and robust models enable you to perform any task efficiently in a short span of time.
+
+         With head office in Mumbai, we support our customer and educate them in embracing disruptive technologies, In-lining production set up, hand holding, true 24/7/365 support throughout the journey.
       </div>
       <!--content starts-->
 @endsection
