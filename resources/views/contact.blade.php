@@ -35,9 +35,9 @@
                         <li><span style="font-size:20px; color:#F60;"><i class="fas fa-envelope"></i></span><a href="mailto:vyomannautomation@gmail.com"> &nbsp  &nbsp vyomannautomation@gmail.com</a></li>
                         <!-- <li><span style="font-size:20px; color:#F60;"><i class="fas fa-globe"></i></span><a href="index.html"> &nbsp www.vyomannautomation.com</a></li> -->
                         <li><span style="font-size:20px; color:#F60;"><i class="fas fa-home"></i></span> &nbsp  &nbsp B/41, Shukla Compound,
-                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Shiv Vallabh Cross Road,
-                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Rawal Pada, Dahisar(E), 
-                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mumbai - 400068.</li>
+                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp  Shiv Vallabh Cross Road,
+                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp  Rawal Pada, Dahisar(E), 
+                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp  Mumbai - 400068.</li>
                     </ul>
                 </div>
             </div>
