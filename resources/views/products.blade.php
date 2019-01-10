@@ -5,7 +5,7 @@
     <!--2nd banner starts-->
     <img src="{{ asset('images/Products 1920x360.png') }}" alt="Vyomann" style="width:100%;">
     <!--2nd banner ends-->
-
+    <div class="container-fluid">
     <div class="row product-container">
       <div class="col-md-5 col-sm-12">
         <div class="featured-image-outer">
@@ -26,6 +26,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     <div id="myGroup" class="container2">

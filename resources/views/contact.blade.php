@@ -8,7 +8,7 @@
     
     <div class="container-fluid contact_div">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
                 <form class="contact_form" id="contact_form">
                     <div class="form-group">
                         <input name="name" type="text" class="form-control validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
@@ -28,16 +28,15 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6  col-sm-6">
                 <div class="details">
                     <ul class="list-unstyled">
-                        <li><span style="font-size:20px; color:#F60;"><i class="fas fa-mobile-alt"></i></span> &nbsp  &nbsp  &nbsp +91 88289 66266</li>
-                        <li><span style="font-size:20px; color:#F60;"><i class="fas fa-envelope"></i></span><a href="mailto:vyomannautomation@gmail.com"> &nbsp  &nbsp vyomannautomation@gmail.com</a></li>
-                        <!-- <li><span style="font-size:20px; color:#F60;"><i class="fas fa-globe"></i></span><a href="index.html"> &nbsp www.vyomannautomation.com</a></li> -->
-                        <li><span style="font-size:20px; color:#F60;"><i class="fas fa-home"></i></span> &nbsp  &nbsp B/41, Shukla Compound,
-                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp  Shiv Vallabh Cross Road,
-                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp  Rawal Pada, Dahisar(E), 
-                        <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp  Mumbai - 400068.</li>
+                        <li><i class="fas fa-mobile-alt"></i> <span>+91 88289 66266</span></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:vyomannautomation@gmail.com"> <span>vyomannautomation@gmail.com</span></a></li>
+                        <li><i class="fas fa-home"></i> <span>B/41, Shukla Compound,
+                        <br>Shiv Vallabh Cross Road,
+                        <br>Rawal Pada, Dahisar(E), 
+                        <br>Mumbai - 400068.</span></li>
                     </ul>
                 </div>
             </div>

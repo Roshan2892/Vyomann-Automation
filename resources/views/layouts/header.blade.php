@@ -3,7 +3,8 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="logo">
-                    <img src="{{ asset('images/Logo 200x75.png') }}" alt="Vyomann logo">
+                    <a href="{{ route('home') }}">
+                    <img src="{{ asset('images/Logo 200x75.png') }}" alt="Vyomann logo"></a>
                 </div>
             </div>
             <ul class="social-links navbar-right">

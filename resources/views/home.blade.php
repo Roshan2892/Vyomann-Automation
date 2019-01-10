@@ -17,10 +17,10 @@
                   <img src="{{ asset('images/Banner-2.jpg') }}" alt="Vyomann" style="width:100%;">
                </div>
                <div class="item">
-                  <img src="{{ asset('images/banner1.gif') }}" alt="Vyomann" style="width:100%;max-height:470px" height="100%">
+                  <img src="{{ asset('images/Banner-2.jpg') }}" alt="Vyomann" style="width:100%;">
                </div>
                <div class="item">
-                  <img src="{{ asset('images/banner3.jpg') }}" alt="Vyomann" style="width:100%;">
+                  <img src="{{ asset('images/Banner-2.jpg') }}" alt="Vyomann" style="width:100%;">
                </div>
             </div>
             <!-- Left and right controls -->
