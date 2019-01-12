@@ -251,7 +251,7 @@ h1 {
 
 
 .featured-image-outer {
-  position: relative;
+  position: absolute;
   margin-left: -8%;
   height: 360px;
   overflow: hidden;
@@ -274,7 +274,7 @@ h1 {
 
 .featured-image-inner {
   left: 41px;
-  position: relative;
+  position: absolute;
   top: 0;
   height: 360px;
   width: 100%;
@@ -301,7 +301,7 @@ h1 {
   transform: skew(-13deg,0deg);
 }
 .two-images-inner {
-  position: relative;
+  position: absolute;
   height: 360px;
   right: 10%;
   width: 100%;
