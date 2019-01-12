@@ -8,10 +8,9 @@ body{margin:0;padding:0;font-family: Arial, Helvetica, sans-serif;}
 .active a{ color: #f2771a !important;    background-color: #212121 !important;}
 a:focus {color:#F60;}
 .navbar-nav>li>a{letter-spacing:1px !important;}
-
-
+textarea.form-control{height: 65px !important;}
 /*--Responsive nav ends--*/
-.content{text-align:center;color:#333;padding:24px;font-size:18px;}
+.content{text-align:center;color:#333;padding:24px;font-size:20px;}
 
 .footer{background-color:#333;text-align:center;padding:10px;color:#FFF;font-size:14px;letter-spacing:.2px;}
 .footer a{color:#FFF;}
@@ -21,8 +20,9 @@ a:focus {color:#F60;}
 .container2{width:100%;background-color:#333;color:#FFF;font-size:22px;text-align:center;margin:0px 0px 5px 0px;}
 .contact_div{background-color:#333;margin:10px 0px 10px 0px;}
 .contact_form{
-  padding: 35px;
+  padding: 25px;
   border-right: 4px solid #F60;
+  margin: 15px 0 15px 0;
 }
 
 .details{    
@@ -41,7 +41,7 @@ a {
   text-decoration: none !important;
 }
 .list-unstyled{width:100%;}
-.list-unstyled li{padding-bottom: 10px;}
+.list-unstyled li{padding-bottom: 20px;}
 
 /**--Form starts--**/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
@@ -251,7 +251,7 @@ h1 {
 
 
 .featured-image-outer {
-  position: absolute;
+  position: relative;
   margin-left: -8%;
   height: 360px;
   overflow: hidden;
@@ -274,7 +274,7 @@ h1 {
 
 .featured-image-inner {
   left: 41px;
-  position: absolute;
+  position: relative;
   top: 0;
   height: 360px;
   width: 100%;
@@ -301,7 +301,7 @@ h1 {
   transform: skew(-13deg,0deg);
 }
 .two-images-inner {
-  position: absolute;
+  position: relative;
   height: 360px;
   right: 10%;
   width: 100%;
@@ -463,7 +463,7 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
-  .content{font-size:14px;}
+  .content{font-size:17px;}
 }
 
 @media only screen and (max-width: 580px) {
@@ -481,5 +481,12 @@ h1 {
 }
 
 @media only screen and (max-width: 425px) {
-  .contact_form{border-right: none;}
+  .contact_form{border-right: none;margin: 0px;}
+  .list-unstyled li {
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  
 }

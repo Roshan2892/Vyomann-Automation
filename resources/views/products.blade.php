@@ -7,14 +7,14 @@
     <!--2nd banner ends-->
     <div class="container-fluid">
     <div class="row product-container">
-      <div class="col-md-5 col-sm-12">
+      <div class="col-lg-5 col-md-5 col-sm-12">
         <div class="featured-image-outer">
           <div class="featured-image-inner">
               <img src="images/printer.png" alt="" class="img-responsive">
           </div>
         </div>
       </div>
-      <div class="col-md-7 col-sm-12">
+      <div class="col-lg-7 col-md-7 col-sm-12">
         <div class="two-images-outer">
           <div class="two-images-inner">
             <div class="product-desc">
