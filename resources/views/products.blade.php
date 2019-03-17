@@ -1,114 +1,74 @@
 @extends('layouts.master')
 
 @section('css') @endsection
+@section('title') - Products @endsection
 @section('content')
-    <!--2nd banner starts-->
-    <img src="{{ asset('images/Products 1920x360.png') }}" alt="Vyomann" style="width:100%;">
-    <!--2nd banner ends-->
-    <div class="container-fluid">
-    <div class="row product-container">
-      <div class="col-lg-5 col-md-5 col-sm-12">
-        <div class="featured-image-outer">
-          <div class="featured-image-inner">
-              <img src="images/printer.png" alt="" class="img-responsive">
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-7 col-md-7 col-sm-12">
-        <div class="two-images-outer">
-          <div class="two-images-inner">
-            <div class="product-desc">
-              <h2>Title: Premier P100 Flexible Labelling System</h2>
-              <p>Why do we use it?
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-              </p>
+    <section class="engine"><a href="https://mobirise.info/s">bootstrap theme</a></section><section class="mbr-section content5 cid-rilcHRASZE mbr-parallax-background" id="content5-m">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="title col-12 col-md-8">
+                    <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
+                        ARTICLE HEADER
+                    </h2>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    </div>
+    </section>
 
-    <div id="myGroup" class="container2">
-    <div class="accordion-group">
-          <div id="gallery" class="collapse indent">
-              <!--image gallery starts-->
-              <div class="row">
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Snow">
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Forest">
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Mountains">
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Mountains" >
-                  </div>
-              </div>
-              <!--image gallery ends-->
-          </div>
-  
-          <div id="video" class="collapse indent">
-              <div class="row">
-                  <div class="col-md-12">
-                      <video width="600" controls>
-                          <source src="https://youtu.be/vjtt-bMonpc" type="video/mp4">
-                          Your browser does not support HTML5 video.
-                      </video>
-                  </div>
-              </div>
-          </div>
-          <div id="attachment" class="collapse indent">
-              <!--image gallery starts-->
-              <div class="row">
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Snow" >
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Forest">
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Mountains" >
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Mountains" >
-                  </div>
-              </div>
-              <!--image gallery ends-->
-          </div>
-          <div id="specifications" class="collapse">
-              <!--image gallery starts-->
-              <div class="row">
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Snow">
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Forest">
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Mountains">
-                  </div>
-                  <div class="col-md-3">
-                      <img src="images/gallery.jpg" class="img-responsive" alt="Mountains">
-                  </div>
-              </div>
-              <!--image gallery ends-->
-          </div>
-      </div>
-      <button data-toggle="collapse" data-target="#gallery" class="btn warning">Gallery</button>
-      <button data-toggle="collapse" data-target="#video" class="btn warning">video</button>
-      <button data-toggle="collapse" data-target="#attachment" class="btn warning">Attachment</button>
-      <button data-toggle="collapse" data-target="#specifications" class="btn warning">Specifications</button>
-  </div>
+    <section class="features3 cid-rild8axaz1" id="features3-p">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/background1.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                No Coding
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Mobirise is an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/background2.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                Mobile Friendly
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                All sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/background3.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                Unique Styles
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Mobirise offers many site blocks in several themes, and though these blocks are pre-made, they are flexible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('js')
-  <script type="text/javascript">
-      var $myGroup = $('#myGroup');
-      $myGroup.on('show.bs.collapse','.collapse', function() {
-          $myGroup.find('.collapse.in').collapse('hide');
-      });
-  </script>
+
 @endsection

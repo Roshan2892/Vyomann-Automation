@@ -1,77 +1,170 @@
 @extends('layouts.master')
 
 @section('css') @endsection
+@section('title') - Applications @endsection
 @section('content')
-  <!--2nd banner starts-->
-  <img src="{{ asset('images/applications 1920x360.png') }}" alt="Vyomann" style="width:100%;">
-  <!--2nd banner ends-->
-  <!--gallery starts-->
-  <!-- <ul id="rig">
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/1.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Lorem Ipsum Dolor</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/kit.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Consectetur Adipiscing</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/newcard.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Vivamus ut Felis</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/pencil.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Curabitur tempus</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/switchh.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Sed et nunc luctus</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/mixxer.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Suspendisse tellus</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/gb.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">pellentesque odio</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="images/nerolac.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Nam euismod</span>
-        </a>
-    </li>
-  </ul> -->
-  <!--gallery ends-->
-  <div id="cp_widget_71a71cda-baf4-4a1f-8ca9-a73f1b737cc9">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cp_widget_71a71cda-baf4-4a1f-8ca9-a73f1b737cc9"; cpo["_fid"] = "AMPAzbuDYOmo";
-var _cpmp = _cpmp || []; _cpmp.push(cpo);
-(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
-var c = document.getElementsByTagName("script")[0];
-c.parentNode.insertBefore(cp, c); })(); </script><noscript><span>New Gallery 2019/1/10</span><span>Category 1</span><span>jlnafkuadf fkbeefbh </span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 536</span><span>height</span><span> 522</span><span>Category 2</span><span>bfefkbsefiybweef weygieiujlwyaw ywvwkerw</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 600</span><span>height</span><span> 600</span><span>Category 3</span><span>ugfkaeg7rehfbwurhgtht ugueygrjwkebfi7ge</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 500</span><span>height</span><span> 324</span><span>Category 4</span><span>wekugwew wewfybef wefs srgs srgs sgr</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 1000</span><span>height</span><span> 1000</span><span>Category 5</span><span>wrgwrgrg wrgwrgtjeuye </span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 352</span><span>height</span><span> 355</span><span>Category 6</span><span>wewretyet35eyeje eu36uery5ya45yy</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 425</span><span>height</span><span> 339</span><span>Category 7</span><span>ryeuerherryueerege  ery35ywtsry6uety</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 427</span><span>height</span><span> 500</span><span>Category 8</span><span>srhyergeuetherte eyeherrt5 </span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 1500</span><span>height</span><span> 1041</span><span>Category 9</span><span>ryettetertteryeue eyey</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 1500</span><span>height</span><span> 1052</span><span>Category 10</span><span>eruetyetweryetur ryryjfghrty </span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 490</span><span>height</span><span> 550</span></noscript>
+    <section class="mbr-section content5 cid-rilaYmvhbp mbr-parallax-background" id="content5-h">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="title col-12 col-md-8">
+                    <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">APPLICATIONS</h2>        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="application-div" id="content5-h">
+        <div class="content p-5">
+            <div class="grid">
+            <div class="grid__sizer"></div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img imag" src="images/applications/1.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/2.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/3.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/4.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/5.0.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/5.1.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/6.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/8.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/9.1.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/9.2.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/10.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/11.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/12.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/13.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/14.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/15.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/16.png" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/16.1.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/17.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/18.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/19.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/20.jfif" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/21.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/22.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/23.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/24.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/25.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/26.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/27.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/27.1.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/28.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/29.jpeg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/30.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/31.jpeg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/32.jfif" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/33.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/34.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/35.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/36.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/37.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/38.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/39.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__sizer"></div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/40.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/41.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/42.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/43.jpg" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/44.JPG" alt="Some image" /></a>
+            </div>
+            <div class="grid__item">
+                <a class="grid__link" href="#"><img class="grid__img" src="images/applications/45.jpg" alt="Some image" /></a>
+            </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('js') @endsection

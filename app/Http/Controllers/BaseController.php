@@ -18,6 +18,10 @@ class BaseController extends Controller
         return view('products');
     }
 
+    public function productDetail(){
+        return view('product-detail');
+    }
+
     public function consultancy(){
         return view('consultancy');
     }
