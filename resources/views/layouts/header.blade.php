@@ -3,7 +3,9 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="logo">
+                    <a href="{{ route('home') }}">
                     <img src="images/Logo 200x75.png" alt="Vyomann logo">
+                    </a>
                 </div>
             </div>
             <div class="social-list pl-0 mb-0">
@@ -33,12 +35,12 @@
                 <span></span>
             </div>
         </button>
-        <div class="menu-logo">
+        <!-- <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
                 VA</a></span>
             </div>
-        </div>
+        </div> -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
                 <li class="nav-item @if(Route::currentRouteName() == 'home') active @endif">

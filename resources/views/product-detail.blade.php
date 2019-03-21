@@ -3,12 +3,12 @@
 @section('css') @endsection
 @section('title') - Product detail @endsection
 @section('content')
-    <section class="engine"><a href="https://mobirise.info/r">free bootstrap template</a></section><section class="features11 cid-rileZKUTg3" id="features11-t">
+    <section class="features11 cid-rileZKUTg3" id="features11-t">
         <div class="container-fluid">   
             <div class="col-md-12">
                 <div class="media-container-row">
-                    <div class="mbr-figure m-auto" style="width: 70%;">
-                        <img src="assets/images/mbr-952x635.jpg" alt="Mobirise" title="">
+                    <div class="mbr-figure m-auto" style="width: 65%;">
+                        <img src="assets/images/mbr-952x635.jpg" alt="" title="">
                     </div>
                     <div class=" align-left aside-content">
                         
@@ -52,23 +52,23 @@
                         <div class="row ">
                             <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
                                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                    data-image="assets/images/background7.jpg"
+                                    data-image="https://placeimg.com/500/375/tech/sepia"
                                     data-target="#image-gallery">
-                                        <img class="img-thumbnail" src="assets/images/background7.jpg" alt="Another alt text">
+                                        <img class="img-thumbnail" src="https://placeimg.com/500/375/tech/sepia" alt="Another alt text">
                                 </a>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
                                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                    data-image="assets/images/background8.jpg"
+                                    data-image="https://placeimg.com/500/375/tech/sepia"
                                     data-target="#image-gallery">
-                                        <img class="img-thumbnail" src="assets/images/background8.jpg" alt="Another alt text">
+                                        <img class="img-thumbnail" src="https://placeimg.com/500/375/tech/sepia" alt="Another alt text">
                                 </a>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
                                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                    data-image="assets/images/background6.jpg"
+                                    data-image="https://placeimg.com/500/375/tech/sepia"
                                     data-target="#image-gallery">
-                                        <img class="img-thumbnail" src="assets/images/background6.jpg" alt="Another alt text">
+                                        <img class="img-thumbnail" src="https://placeimg.com/500/375/tech/sepia" alt="Another alt text">
                                 </a>
                             </div>
                         </div>
@@ -78,8 +78,8 @@
             <section class="cid-riljl5WpMT container collapse" id="video">
                 <figure class="mbr-figure align-center ">
                 <h2 class="align-center">Video</h2><hr>
-                <div class="video-block" style="width: 100%;">
-                    <div><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/uNCr7NdOJgw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="560" height="250" frameborder="0" allowfullscreen></iframe></div>
+                <div class="video-block">
+                    <div><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/uNCr7NdOJgw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="450" height="300" frameborder="0" allowfullscreen></iframe></div>
                 </div>
                 </figure>
             </section>
@@ -92,36 +92,15 @@
                             <li data-app-prevent-settings="" data-target="#attachments" data-slide-to="1"></li>
                             <li data-app-prevent-settings="" data-target="#attachments" data-slide-to="2"></li>
                         </ol>
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(assets/images/banner-2-1254x470.jpg);">
-                                <div class="container container-slide">
-                                    <div class="image_wrapper">
-                                        <img src="assets/images/background6.jpg">
-                                        <div class="carousel-caption justify-content-center">
-                                            <div class="col-10 align-left"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="carousel-inner product-attachment" role="listbox">
+                            <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(https://placeimg.com/500/375/tech/sepia);">
+                                
                             </div>
-                            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/banner1.gif);">
-                                <div class="container container-slide">
-                                    <div class="image_wrapper">
-                                        <img src="assets/images/background7.jpg">
-                                        <div class="carousel-caption justify-content-center">
-                                            <div class="col-10 align-left"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(https://placeimg.com/500/375/tech/sepia);">
+                                
                             </div>
-                            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/banner-2-1254x470.jpg);">
-                                <div class="container container-slide">
-                                    <div class="image_wrapper">
-                                        <img src="assets/images/background8.jpg">
-                                        <div class="carousel-caption justify-content-center">
-                                            <div class="col-10 align-right"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(https://placeimg.com/500/375/tech/sepia);">
+                               
                             </div>
                         </div>
                         <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#attachments">

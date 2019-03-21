@@ -4,7 +4,31 @@
 @section('title') @endsection
 @section('content')
     <section class="carousel slide cid-ripCC9sqDe" data-interval="false" id="slider1-1m">
-        <div class="full-screen"><div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="4000"><ol class="carousel-indicators"><li data-app-prevent-settings="" data-target="#slider1-1m" class=" active" data-slide-to="0"></li><li data-app-prevent-settings="" data-target="#slider1-1m" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider1-1m" data-slide-to="2"></li></ol><div class="carousel-inner" role="listbox"><div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(assets/images/banner-2-1254x470.jpg);"><div class="container container-slide"><div class="image_wrapper"><img src="assets/images/banner-2-1254x470.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-left"></div></div></div></div></div><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/banner1.gif);"><div class="container container-slide"><div class="image_wrapper"><img src="assets/images/banner1.gif"><div class="carousel-caption justify-content-center"><div class="col-10 align-left"></div></div></div></div></div><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/banner-2-1254x470.jpg);"><div class="container container-slide"><div class="image_wrapper"><img src="assets/images/banner-2-1254x470.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-right"></div></div></div></div></div></div><a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slider1-1m"><span aria-hidden="true" class="mbri-left mbr-iconfont"></span><span class="sr-only">Previous</span></a><a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next" href="#slider1-1m"><span aria-hidden="true" class="mbri-right mbr-iconfont"></span><span class="sr-only">Next</span></a></div></div>
+        <div class="full-screen">
+            <div class="mbr-slider home slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="4000">
+                <ol class="carousel-indicators">
+                    <li data-app-prevent-settings="" data-target="#slider1-1m" class=" active" data-slide-to="0"></li>
+                    <li data-app-prevent-settings="" data-target="#slider1-1m" data-slide-to="1"></li>
+                    <li data-app-prevent-settings="" data-target="#slider1-1m" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(assets/images/banner-2-1254x470.jpg);"></div>
+
+                    <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/banner1.gif);"></div>
+
+                    <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/banner-2-1254x470.jpg);">
+                </div>
+            
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slider1-1m">
+                    <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next" href="#slider1-1m">
+                    <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
     </section>
 
     <section class="mbr-section content5 cid-ril8ADp4sV mbr-parallax-background" id="content5-b">

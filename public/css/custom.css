@@ -1,4 +1,5 @@
 body{ background: #fff; }
+.logo img{ width: 95px;}
 .contact-div{
   border-right: 4px solid #ff6600;
 }
@@ -11,12 +12,17 @@ body{ background: #fff; }
 .application-div{background-color: #fff !important;}
 
 .logo{padding:6px;}
+.social-list{    padding-top: 15px;}
 .socicon {font-size:27px; color:#333333;}
-.active a{ color: #f2771a !important; }
+.cid-ril3yc4pgM .nav-link{
+  font-size: 15px;}
+.cid-ril3yc4pgM .active a{ color: #f2771a !important; }
 
-a:focus {
+.cid-ril3yc4pgM a:focus {
   color:#F60;
 }
+
+.cid-ril8H801Dr .section-text{font-size: 17px;}
 
 /*Product page*/
 .item {
@@ -43,6 +49,11 @@ a:focus {
   background: #fff;
 }
 
+.cid-rilcHRASZE, .cid-rilaYmvhbp, .cid-rilmKbDRjr{ padding-bottom: 35px; }
+.cid-ripCC9sqDe .full-screen .product-attachment .slider-fullscreen-image{min-height: 375px;}
+.cid-rild8axaz1{padding-top: 60px;}
+.cid-ril8ADp4sV{padding: 62px 0 35px 0;}
+
 .video-block iframe{height: 540px !important; }
 #gallery img{max-width: 100%;}
 .accordion-group { background: #fff; }
@@ -60,15 +71,35 @@ a:focus {
     -webkit-transition: none;
     transition: none;
     display: none;
-}
+  }
 }
 
 @media only screen and (max-width: 580px) {
+  body{font-size: 15px;}
+  .logo img{ width: 80px;}
   .product-links { display: none; }
   #specifications{display: block; }
   #video{display: block; }
   #attachments{display: block; }
   #gallery{display: block; }
-  	.logo{text-align: center;}
-  	.socicon{text-align: center;margin-bottom: 0px;}
+  .logo{text-align: center;}
+  
+  .socicon{text-align: center;margin-bottom: 0px;font-size: 23px;}
+
+  /* Home page */
+  .cid-ril8ADp4sV{padding: 45px 0 25px 0;}
+  .cid-ril8H801Dr .section-text{padding: 0;font-size: 13px;}
+
+  /* Application, products, contact */
+  .cid-rilaYmvhbp, .cid-rilcHRASZE, .cid-rilmKbDRjr{padding: 100px 0 25px 0;}
+
+  /* Product */
+  .video-block iframe{height: 300px !important;}
+  .cid-rillRmnV28 .display-5{font-size: 16px;}
+  #image-gallery{top:20%;}
+
+  .cid-ripCC9sqDe .full-screen .product-attachment .slider-fullscreen-image{min-height: 300px;}
+  .cid-ripCC9sqDe .full-screen .home .slider-fullscreen-image{min-height: 450px;}
+  /* Footer */
+  .cid-ril9bk265C .display-7{ font-size: 13px;}
 }
