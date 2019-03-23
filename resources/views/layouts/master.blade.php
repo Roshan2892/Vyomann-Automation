@@ -54,7 +54,7 @@
         <script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
         <script src="{{ asset('js/anime.min.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
-        <!-- <script src="js/jquery.inputmask.bundle.js"></script> -->
+        <script src="js/jquery.inputmask.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         
         @yield('js')
