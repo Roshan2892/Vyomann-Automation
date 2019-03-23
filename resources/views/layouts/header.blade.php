@@ -4,7 +4,7 @@
             <div class="navbar-header">
                 <div class="logo">
                     <a href="{{ route('home') }}">
-                    <img src="images/Logo 200x75.png" alt="Vyomann logo">
+                    <img src="{{ asset('images/Logo 200x75.png') }}" alt="Vyomann logo">
                     </a>
                 </div>
             </div>
@@ -49,9 +49,9 @@
                 <li class="nav-item @if(Route::currentRouteName() == 'application') active @endif">
                     <a class="nav-link link text-white display-4" href="{{ route('application') }}">APPLICATIONS</a>
                 </li>
-                <li class="nav-item @if(Route::currentRouteName() == 'product-detail') active @endif">
+                <!-- <li class="nav-item @if(Route::currentRouteName() == 'product-detail') active @endif">
                     <a class="nav-link link text-white display-4" href="{{ route('product-detail') }}">PRODUCT</a>
-                </li>
+                </li> -->
                 <li class="nav-item @if(Route::currentRouteName() == 'products') active @endif">
                     <a class="nav-link link text-white display-4" href="{{ route('products') }}">PRODUCTS</a>
                 </li>

@@ -15,10 +15,10 @@ Route::get('', ['uses' => 'BaseController@home', 'as' => 'home']);
 Route::get('application', ['uses' => 'BaseController@application', 'as' => 'application']);
 
 Route::get('products', ['uses' => 'BaseController@products', 'as' => 'products']);
-Route::get('product', ['uses' => 'BaseController@productDetail', 'as' => 'product-detail']);
+Route::get('product/{id?}', ['uses' => 'BaseController@productDetail', 'as' => 'product-detail']);
 Route::get('consultancy', ['uses' => 'BaseController@consultancy', 'as' => 'consultancy']);
 Route::get('contact', ['uses' => 'BaseController@contact', 'as' => 'contact']);
-Route::post('contact', ['uses' => 'BaseController@postContact', 'as' => 'post-contact']);
+Route::post('contact', ['uses' => 'BaseController@postContact', 'as' => 'contact-us']);
 
 
 Route::group(['prefix' => 'admin'], function () {

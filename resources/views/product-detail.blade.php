@@ -3,12 +3,13 @@
 @section('css') @endsection
 @section('title') - Product detail @endsection
 @section('content')
+    @if(isset($product))
     <section class="features11 cid-rileZKUTg3" id="features11-t">
         <div class="container-fluid">   
             <div class="col-md-12">
                 <div class="media-container-row">
                     <div class="mbr-figure m-auto" style="width: 65%;">
-                        <img src="assets/images/mbr-952x635.jpg" alt="" title="">
+                        <img src="{{ asset('storage/'.$product->product_gif) }}" height="500" alt="" title="">
                     </div>
                     <div class=" align-left aside-content">
                         
@@ -20,18 +21,12 @@
                             <div class="card p-3 pr-3">
                                 <div class="media">
                                     <div class="media-body">
-                                        <h3>FP-150-SA</h3>
+                                        <h3>{{ $product->title }}</h3>
                                     </div>
                                 </div>                
 
                                 <div class="card-box">
-                                    <p class="block-text mbr-fonts-style display-7">Flawless machine for printing or transfering on flat surfaces of any shape within the limited size.
-    Made from high grade Plain carbon steel, and then either powder coated or nickel chromed for visual looks.
-    Having installed all pnuematic spares from the well khown company Jantics and Festo.
-    With best in class single servo motor installed for the accurate foil pulling system.
-    Machine is full automized with advanced level of PLC programming.
-    <br>
-    <br>- Maya Angelou<br></p>
+                                    <p class="block-text mbr-fonts-style display-7">{{ $product->description }}</p>
                                 </div>
                             </div>
 
@@ -44,13 +39,24 @@
     </section>
     <div id="myGroup" class="container2">
         <div class="accordion-group">
+            @if(count(json_decode($product->gallery_images)) > 0)
+            @php $gallery_images = json_decode($product->gallery_images); @endphp
             <section class="mbr-gallery mbr-slider-carousel cid-rilkO0Zx18 container collapse" id="gallery">
                 <h2 class="align-center">Gallery</h2>
                 <hr>
                 <div class="mbr-gallery-row">
                     <div class="mbr-gallery-layout-default">
-                        <div class="row ">
+                        <div class="row">
+                            @foreach($gallery_images as $gi)
                             <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
+                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                    data-image="{{ asset('storage/'. $gi) }}"
+                                    data-target="#image-gallery">
+                                        <img class="img-thumbnail" src="{{ asset('storage/'.$gi) }}" height="350" width="500" alt="Another alt text">
+                                </a>
+                            </div>
+                            @endforeach
+                            <!-- <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
                                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                                     data-image="https://placeimg.com/500/375/tech/sepia"
                                     data-target="#image-gallery">
@@ -63,45 +69,43 @@
                                     data-target="#image-gallery">
                                         <img class="img-thumbnail" src="https://placeimg.com/500/375/tech/sepia" alt="Another alt text">
                                 </a>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                    data-image="https://placeimg.com/500/375/tech/sepia"
-                                    data-target="#image-gallery">
-                                        <img class="img-thumbnail" src="https://placeimg.com/500/375/tech/sepia" alt="Another alt text">
-                                </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </section>
+            @endif
+
+            @if(isset($product->video_url))
             <section class="cid-riljl5WpMT container collapse" id="video">
                 <figure class="mbr-figure align-center ">
                 <h2 class="align-center">Video</h2><hr>
                 <div class="video-block">
-                    <div><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/uNCr7NdOJgw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="450" height="300" frameborder="0" allowfullscreen></iframe></div>
+                    <div><!-- <iframe class="mbr-embedded-video" src="{{ $product->video_url }}" width="450" height="300" frameborder="0" allowfullscreen></iframe> -->
+                        {!! $product->video_url !!}
+                    </div>
                 </div>
                 </figure>
             </section>
-            <section class="carousel slide cid-ripCC9sqDe container collapse" data-interval="false" id="attachments"  >
-                <h2 class="align-center">Attachments</h2><hr>
+            @endif
+
+            @if(count(json_decode($product->attachment_images)) > 0)
+            @php $attachment_images = json_decode($product->attachment_images); @endphp
+            <section class="carousel slide cid-ripCC9sqDe container collapse" data-interval="false" id="attachments">
+                <h2 class="modal fade show"class="align-center">Attachments</h2><hr>
                 <div class="full-screen">
                     <div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="4000">
                         <ol class="carousel-indicators">
-                            <li data-app-prevent-settings="" data-target="#attachments" class=" active" data-slide-to="0"></li>
-                            <li data-app-prevent-settings="" data-target="#attachments" data-slide-to="1"></li>
-                            <li data-app-prevent-settings="" data-target="#attachments" data-slide-to="2"></li>
+                            @foreach($attachment_images as $key => $ai)
+                                <li data-app-prevent-settings="" data-target="#attachments" class=" active" data-slide-to="{{ $key }}"></li>
+                            @endforeach
                         </ol>
                         <div class="carousel-inner product-attachment" role="listbox">
-                            <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(https://placeimg.com/500/375/tech/sepia);">
-                                
-                            </div>
-                            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(https://placeimg.com/500/375/tech/sepia);">
-                                
-                            </div>
-                            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(https://placeimg.com/500/375/tech/sepia);">
-                               
-                            </div>
+                            @foreach($attachment_images as $key => $ai)
+                                <div class="carousel-item slider-fullscreen-image @if($key == 0) active @endif" data-bg-video-slide="true" 
+                                style="background-image: url('{{ '../storage/'. $ai }}');">
+                                </div>
+                            @endforeach
                         </div>
                         <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#attachments">
                             <span aria-hidden="true" class="mbri-left mbr-iconfont"></span><span class="sr-only">Previous</span>
@@ -112,66 +116,79 @@
                     </div>
                 </div>
             </section>
+            @endif
+            @if(isset($product->left_specification))
             <section class="mbr-section article content3 cid-rillRmnV28 container collapse" id="specifications">
                 <h2 class="align-center">Specifications</h2><hr>
                 <!-- <div class="container"> -->
                     <div class="media-container-row">
                         <div class="row col-12 col-md-12">
                             <div class="section-text col-12 mbr-fonts-style align-right col-md-6 display-5">
-                            <p>Machine dimension<br>
+                            <!-- <p>Machine dimension<br>
                                 Machine weight<br>
                                 Printing area<br>
                                 Printing temperature<br>
                                 Printing speed<br>
-                                </p>
+                                </p> -->
+                                <p>{!! $product->left_specification !!}</p>
                             </div>
                             <div class="col-12 section-text mbr-fonts-style align-left display-5 col-md-6">
-                            <p>Printing pressure<br>
+                            <!-- <p>Printing pressure<br>
                                 Printing output<br>
                                 Electricity requirement <br>
                                 Electricity consumption<br>
-                            </p>
+                            </p> -->
+                            <p>{!! $product->right_specification !!}</p>
                             </div>
                             
                         </div>
                     </div>
                 <!-- </div> -->
             </section>
+            @endif
         </div>
         <section class="container-fluid product-links">
             <div class="row">
+                @if(count(json_decode($product->gallery_images)) > 0)
                 <div class="col-lg-3 col-sm-3 col-md-3 item">
                     <a href="#gallery" id="gallery-link" data-toggle="collapse" data-target="#gallery">
                     <div class="icons">
-                        <img src="images/gallery.png">
+                        <img src="{{ asset('images/gallery.png') }}">
                         <span class="text">Gallery</span>
                     </div>
                     </a>
                 </div>
+                @endif
+                @if(isset($product->video_url))
                 <div class="col-lg-3 col-md-3 item">
                     <a href="#video"  id="video-link" data-toggle="collapse" data-target="#video">
                     <div class="icons">
-                        <img src="images/video.png">
+                        <img src="{{ asset('images/video.png') }}">
                         <span class="text">Video</span>
                     </div>
                     </a>
                 </div>
+                @endif
+                @if(count(json_decode($product->attachment_images)) > 0)
                 <div class="col-lg-3 col-md-3 item">
                     <a href="#attachments"  id="attachment-link" data-toggle="collapse">
                     <div class="icons">
-                        <img src="images/attachment.png">
+                        <img src="{{ asset('images/attachment.png') }}">
                         <span class="text">Attachment</span>
                     </div>
                     </a>
                 </div>
+                @endif
+                @if(isset($product->left_specification))
                 <div class="col-lg-3 col-md-3 item">
                     <a href="#specifications"  id="specification-link" data-toggle="collapse" data-target="#specifications">
                     <div class="icons">
-                        <img src="images/specification.png">
+                        <img src="{{ asset('images/specification.png') }}">
                         <span class="text">Specification</span>
                     </div>
                     </a>
                 </div>
+                @endif
             </div>
         </section>
     </div>
@@ -180,13 +197,23 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <img id="image-gallery-image" class="img-responsive col-md-12 carousel-item active" src="">
-                    <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#prev"  id="show-previous-image"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
-                    <a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#next" id="show-next-image"><span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span></a>
-                    <a class="close" href="#" role="button" data-dismiss="modal"><span class="sr-only">Close</span></a>
+
+                    <!-- <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#prev"  id="show-previous-image"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
+                    <a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#next" id="show-next-image"><span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span></a> -->
+
+                    <a data-app-prevent-settings="" class="carousel-control carousel-control-prev prev-button" role="button" data-slide="prev" href="#prev" id="show-previous-image">
+                        <span aria-hidden="true" class="mbri-left mbr-iconfont"></span><span class="sr-only">Previous</span>
+                    </a>
+                    <a data-app-prevent-settings="" class="carousel-control carousel-control-next next-button" role="button" data-slide="next" href="#next" id="show-next-image">
+                        <span aria-hidden="true" class="mbri-right mbr-iconfont"></span><span class="sr-only">Next</span>
+                    </a>
+
+                    
                 </div>
             </div>
         </div>
     </div>
+    @endif
 @endsection
 
 @section('js')

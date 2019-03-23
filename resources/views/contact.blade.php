@@ -18,7 +18,8 @@
             <div class="row">
                 <div class="col-md-6 contact-div">
                     <div data-form-type="formoid">
-                        <form class="block mbr-form" action="" method="post" data-form-title="Contact Form"><input type="hidden" name="email" data-form-email="true" value="X2MerYKyKSd+dfY3g5DYxBDQaD+kcIUiWGmuviZUS8WtICiIwdml9At++/umSq33xlCOQtavmf0xireXM5a3kYNW5+GpRIKJk2mC+YOzczDJff/3MnwOzhIuUKW0gS72">
+                        <form class="block mbr-form" action="{{ route('contact-us') }}" method="post" data-form-title="Contact Form">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6 multi-horizontal" data-for="name">
                                     <input type="text" class="form-control input" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-1e">
@@ -56,4 +57,10 @@
         </div>
     </section>
 @endsection
-@section('js') @endsection
+@section('js')
+    <script>
+        $(document).ready(function(){
+            $('#phone-form4-1e').inputmask({"mask": "(999) 999-9999", "onincomplete": function(){ $(this).val('') } }); //specifying options
+        });
+    </script>
+@endsection
