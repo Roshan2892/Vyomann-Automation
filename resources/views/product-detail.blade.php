@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="media-container-row">
                     <div class="mbr-figure m-auto" style="width: 65%;">
-                        <img src="{{ asset('storage/'.$product->product_gif) }}" height="500" alt="" title="">
+                        <img src="{{ asset('storage/'.$product->product_gif) }}" class="img-responsive" alt="" title="">
                     </div>
                     <div class=" align-left aside-content">
                         
@@ -92,7 +92,7 @@
             @if(count(json_decode($product->attachment_images)) > 0)
             @php $attachment_images = json_decode($product->attachment_images); @endphp
             <section class="carousel slide cid-ripCC9sqDe container collapse" data-interval="false" id="attachments">
-                <h2 class="modal fade show"class="align-center">Attachments</h2><hr>
+                <h2 class="align-center">Attachments</h2><hr>
                 <div class="full-screen">
                     <div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="4000">
                         <ol class="carousel-indicators">
