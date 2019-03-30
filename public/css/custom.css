@@ -181,7 +181,7 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
   .cid-rillRmnV28 .display-5{ font-size: 15px;
     line-height: initial;
   }
-  #image-gallery{top:20%;}
+  #image-gallery{top: 10%;padding: 0px !important;}
 
   .cid-ripCC9sqDe .full-screen .product-attachment .slider-fullscreen-image{min-height: 300px;}
   .cid-ripCC9sqDe .full-screen .home .slider-fullscreen-image{min-height: 450px;}
