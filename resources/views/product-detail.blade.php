@@ -8,7 +8,7 @@
         <div class="container-fluid">   
             <div class="col-md-12">
                 <div class="media-container-row">
-                    <div class="mbr-figure m-auto" style="width:65%;">
+                    <div class="mbr-figure m-auto thumbnail" style="width:60%;">
                         <img src="{{ asset('storage/'.$product->product_gif) }}" class="img-responsive" alt="" title="">
                     </div>
                     <div class=" align-left aside-content">
