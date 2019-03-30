@@ -8,7 +8,7 @@
         <div class="container-fluid">   
             <div class="col-md-12">
                 <div class="media-container-row">
-                    <div class="mbr-figure m-auto" style="width: 65%;">
+                    <div class="mbr-figure m-auto" style="width:65%;">
                         <img src="{{ asset('storage/'.$product->product_gif) }}" class="img-responsive" alt="" title="">
                     </div>
                     <div class=" align-left aside-content">
@@ -48,13 +48,15 @@
                     <div class="mbr-gallery-layout-default">
                         <div class="row">
                             @foreach($gallery_images as $gi)
-                            <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
-                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                    data-image="{{ asset('storage/'. $gi) }}"
-                                    data-target="#image-gallery">
-                                        <img class="img-thumbnail" src="{{ asset('storage/'.$gi) }}" height="350" width="500" alt="Another alt text">
-                                </a>
-                            </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4"
+                                    data-image="{{ asset('storage/'. $gi) }}" data-target="#image-gallery">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                        data-image="{{ asset('storage/'. $gi) }}"
+                                        data-target="#image-gallery">
+                                        <img class="" src="{{ asset('storage/'.$gi) }}" height="350" width="500" alt="Another alt text">
+                                    </a>
+                                </div>
+                                
                             @endforeach
                             <!-- <div class="col-md-4 col-sm-6 col-xs-12 mbr-gallery-item mbr-gallery-item--p4">
                                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
@@ -192,7 +194,7 @@
             </div>
         </section>
     </div>
-    <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="mbr-slider modal fade carousel slide"  tabindex="-1" data-keyboard="true" data-interval="false">
+    <div class="modal fade image-gallery" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="mbr-slider modal fade carousel slide"  tabindex="-1" data-keyboard="true" data-interval="false">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
