@@ -5,6 +5,9 @@
                 <p class="mbr-text mb-0 mbr-fonts-style display-7">
                     © Copyright 2019 Vyomann Inc - All Rights Reserved
                 </p>
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    Developed By - <a href="http://roshansuvarna.com" target="_blank"><span style="color: #ff6501;">Roshan Suvarna</span></a>
+                </p>
             </div>
         </div>
     </div>

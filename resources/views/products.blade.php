@@ -25,14 +25,14 @@
                         <a href="{{ route('product-detail', ['id' => $id]) }}">
                             <div class="card-wrapper">
                                 <div class="card-img">
-                                    <img src="{{ asset('storage/'.$product->product_gif) }}" alt="" class="img-responsive">
+                                    <img src="{{ asset('storage/'.$product->banner_image) }}" alt="" class="img-responsive">
                                 </div>
                                 <div class="card-box">
                                     <h4 class="card-title mbr-fonts-style display-7">
                                         {{ $product->title }}
                                     </h4>
                                     <p class="mbr-text mbr-fonts-style display-7">
-                                        {{ $product->description }}
+                                        {{ $product->short_desc }}
                                     </p>
                                 </div>
                             </div>
