@@ -15,11 +15,11 @@
 }
 
 body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
-.logo img{ width: 95px;}
+.logo img{ width: 130px;}
 .contact-div{
   border-right: 4px solid #ff6600;
 }
-
+.cid-ril3yc4pgM .navbar{    min-height: 60px;}
 .icon-contacts i{
     color: #F60;
     font-size: 20px;
@@ -164,7 +164,7 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
 
 @media only screen and (max-width: 580px) {
   body{font-size: 15px;}
-  .logo img{ width: 130px;}
+  .logo img{ width: 115px;}
   .cid-ril3yc4pgM button.navbar-toggler{top: 1.4rem;}
   .product-links { display: none; }
   #specifications{display: block; }
