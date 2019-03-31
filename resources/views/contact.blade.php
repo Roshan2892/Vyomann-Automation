@@ -48,7 +48,7 @@
                             <i class="fas fa-envelope"></i> {{ setting('site.contact-email') }}
                         </p>
                         <p class="mbr-text align-center mbr-fonts-style display-6">
-                            <i class="fas fa-home"></i> {!! setting('site.contact-address') !!}
+                            <i class="fas fa-home"></i> B/41, Shukla Compound, Shiv Vallabh Cross Road, <br> Rawal Pada, Dahisar (E), Mumbai - 400068.
                         </p>
                     </div>
                     </div>
