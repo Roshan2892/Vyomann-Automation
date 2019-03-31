@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
         <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
         <meta name="description" content="">
-        <title>Vyomann Automation @yield('title')</title>
+        <title>{{ setting('site.title') }} @yield('title')</title>
         <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons/mobirise-icons.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
@@ -30,7 +30,7 @@
         @include('layouts.header')
 
         @yield('content')
-
+       
         @include('layouts.footer')
 
         <!-- View included JS -->

@@ -42,13 +42,13 @@
                     <div class="pt-5">
                     <div class="icon-contacts pt-3">
                         <p class="mbr-text align-left mbr-fonts-style display-6">
-                            <i class="fas fa-mobile-alt"></i> +91 88289 66266
+                            <i class="fas fa-mobile-alt"></i> {{ setting('site.contact-number') }}
                         </p>
                         <p class="mbr-text align-left mbr-fonts-style display-6">
-                            <i class="fas fa-envelope"></i> vyomannautomation@gmail.com
+                            <i class="fas fa-envelope"></i> {{ setting('site.contact-email') }}
                         </p>
                         <p class="mbr-text align-center mbr-fonts-style display-6">
-                            <i class="fas fa-home"></i> B/41, Shukla Compound, Shiv Vallabh Cross Road, <br> Rawal Pada, Dahisar (E), Mumbai - 400068.
+                            <i class="fas fa-home"></i> {!! setting('site.contact-address') !!}
                         </p>
                     </div>
                     </div>
