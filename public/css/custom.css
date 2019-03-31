@@ -91,10 +91,10 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
 .cid-rild8axaz1 .card-wrapper{height: 520px; max-height: 520px;}
 .cid-rild8axaz1 h4.display-7{font-family: 'Roboto Condensed Bold', sans-serif;font-size: 26px; line-height: 35px;}
 .cid-rild8axaz1 p.display-7{font-family: 'Roboto Condensed Light', sans-serif;font-weight: 600; font-size: 18px;}
-.cid-rild8axaz1 img{ max-height: 350px;object-fit: contain;}
+.cid-rild8axaz1 img{ max-height: 350px; height:350px;object-fit: contain;}
 
 /* Product detail page */
-.cid-rileZKUTg3 img{max-height: 600px; object-fit: contain;}
+.cid-rileZKUTg3 img{max-height: 600px; height:600px; object-fit: contain;}
 .cid-rileZKUTg3 h3{
   color: #ff6501;font-family: 'Roboto Condensed Bold', sans-serif;font-size: 26px;line-height: 35px;
 }
