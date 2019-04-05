@@ -40,7 +40,7 @@
     
     <div id="myGroup" class="container2">
         <div class="accordion-group">
-            @if(count(json_decode($product->gallery_images)) > 0)
+            @if(isset($product->gallery_images) && count(json_decode($product->gallery_images)) > 0)
             @php $gallery_images = json_decode($product->gallery_images); @endphp
             <section class="mbr-gallery mbr-slider-carousel cid-rilkO0Zx18 container collapse" id="gallery">
                 <h2 class="align-center">Gallery</h2>
@@ -80,7 +80,7 @@
             </section>
             @endif
 
-            @if(count(json_decode($product->attachment_images)) > 0)
+            @if(isset($product->attachment_images) && count(json_decode($product->attachment_images)) > 0)
             @php $attachment_images = json_decode($product->attachment_images); @endphp
             <section class="carousel slide cid-ripCC9sqDe collapse attachments" data-interval="false" id="attachments" data-rv-view="6392">
                 <div class="content-slider">
@@ -144,36 +144,22 @@
             @if(isset($product->left_specification))
             <section class="mbr-section article content3 cid-rillRmnV28 container collapse" id="specifications">
                 <h2 class="align-center">Specifications</h2><hr>
-                <!-- <div class="container"> -->
                     <div class="media-container-row">
                         <div class="row col-12 col-md-12">
                             <div class="section-text col-12 mbr-fonts-style align-right col-md-6 display-5">
-                            <!-- <p>Machine dimension<br>
-                                Machine weight<br>
-                                Printing area<br>
-                                Printing temperature<br>
-                                Printing speed<br>
-                                </p> -->
                                 <p>{!! $product->left_specification !!}</p>
                             </div>
                             <div class="col-12 section-text mbr-fonts-style align-left display-5 col-md-6">
-                            <!-- <p>Printing pressure<br>
-                                Printing output<br>
-                                Electricity requirement <br>
-                                Electricity consumption<br>
-                            </p> -->
-                            <p>{!! $product->right_specification !!}</p>
+                                <p>{!! $product->right_specification !!}</p>
                             </div>
-                            
                         </div>
                     </div>
-                <!-- </div> -->
             </section>
             @endif
         </div>
         <section class="container-fluid product-links">
             <div class="row">
-                @if(count(json_decode($product->gallery_images)) > 0)
+                @if(isset($product->gallery_images) && count(json_decode($product->gallery_images)) > 0)
                 <div class="col-lg-3 col-sm-3 col-md-3 item">
                     <a href="#gallery" id="gallery-link" data-toggle="collapse" data-target="#gallery">
                     <div class="icons">
@@ -193,7 +179,7 @@
                     </a>
                 </div>
                 @endif
-                @if(count(json_decode($product->attachment_images)) > 0)
+                @if(isset($product->attachment_images) && count(json_decode($product->attachment_images)) > 0)
                 <div class="col-lg-3 col-md-3 item">
                     <a href="#attachments"  id="attachment-link" data-toggle="collapse">
                     <div class="icons">
