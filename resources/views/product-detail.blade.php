@@ -159,46 +159,74 @@
         </div>
         <section class="container-fluid product-links">
             <div class="row">
-                @if(isset($product->gallery_images) && count(json_decode($product->gallery_images)) > 0)
                 <div class="col-lg-3 col-sm-3 col-md-3 item">
-                    <a href="#gallery" id="gallery-link" data-toggle="collapse" data-target="#gallery">
-                    <div class="icons">
-                        <img src="{{ asset('images/gallery.png') }}">
-                        <span class="text">Gallery</span>
-                    </div>
-                    </a>
+                    @if(isset($product->gallery_images) && count(json_decode($product->gallery_images)) > 0)
+                        <a href="#gallery" id="gallery-link" data-toggle="collapse" data-target="#gallery">
+                            <div class="icons">
+                                <img src="{{ asset('images/gallery.png') }}">
+                                <span class="text">Gallery</span>
+                            </div>
+                        </a>
+                    @else
+                        <div class="icons">
+                            <img src="{{ asset('images/gallery.png') }}">
+                            <span class="text">Gallery</span>
+                        </div>
+                    @endif
                 </div>
-                @endif
-                @if(isset($product->video_url))
+               
+                
                 <div class="col-lg-3 col-md-3 item">
-                    <a href="#video"  id="video-link" data-toggle="collapse" data-target="#video">
-                    <div class="icons">
-                        <img src="{{ asset('images/video.png') }}">
-                        <span class="text">Video</span>
-                    </div>
-                    </a>
+                    @if(isset($product->video_url))
+                        <a href="#video"  id="video-link" data-toggle="collapse" data-target="#video">
+                            <div class="icons">
+                                <img src="{{ asset('images/video.png') }}">
+                                <span class="text">Video</span>
+                            </div>
+                        </a>
+                    @else
+                        <div class="icons">
+                            <img src="{{ asset('images/video.png') }}">
+                            <span class="text">Video</span>
+                        </div>
+                    @endif
                 </div>
-                @endif
-                @if(isset($product->attachment_images) && count(json_decode($product->attachment_images)) > 0)
+                
+
+                
                 <div class="col-lg-3 col-md-3 item">
-                    <a href="#attachments"  id="attachment-link" data-toggle="collapse">
-                    <div class="icons">
-                        <img src="{{ asset('images/attachment.png') }}">
-                        <span class="text">Attachment</span>
-                    </div>
-                    </a>
+                    @if(isset($product->attachment_images) && count(json_decode($product->attachment_images)) > 0)
+                        <a href="#attachments"  id="attachment-link" data-toggle="collapse">
+                            <div class="icons">
+                                <img src="{{ asset('images/attachment.png') }}">
+                                <span class="text">Attachment</span>
+                            </div>
+                        </a>
+                    @else
+                        <div class="icons">
+                            <img src="{{ asset('images/attachment.png') }}">
+                            <span class="text">Attachment</span>
+                        </div>
+                    @endif
                 </div>
-                @endif
-                @if(isset($product->left_specification))
+                
+                
                 <div class="col-lg-3 col-md-3 item">
-                    <a href="#specifications"  id="specification-link" data-toggle="collapse" data-target="#specifications">
-                    <div class="icons">
-                        <img src="{{ asset('images/specification.png') }}">
-                        <span class="text">Specification</span>
-                    </div>
-                    </a>
+                    @if(isset($product->left_specification))
+                        <a href="#specifications"  id="specification-link" data-toggle="collapse" data-target="#specifications">
+                            <div class="icons">
+                                <img src="{{ asset('images/specification.png') }}">
+                                <span class="text">Specification</span>
+                            </div>
+                        </a>
+                    @else
+                        <div class="icons">
+                            <img src="{{ asset('images/specification.png') }}">
+                            <span class="text">Specification</span>
+                        </div>
+                    @endif
                 </div>
-                @endif
+                
             </div>
         </section>
     </div>
