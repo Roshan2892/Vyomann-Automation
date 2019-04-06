@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('css') @endsection
-@section('title') - Product detail @endsection
+@section('title') {{ $product->title . ' - ' }} @endsection
 @section('content')
     @if(isset($product))
     <section class="features11 cid-rileZKUTg3" id="features11-t">
@@ -57,7 +57,6 @@
                                         <img class="" src="{{ asset('storage/'.$gi) }}" height="350" width="500" alt="Another alt text">
                                     </a>
                                 </div>
-                                
                             @endforeach
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('css') @endsection
-@section('title') - Contact Us @endsection
+@section('title') Contact Us - @endsection
 @section('content')
     <section class="mbr-section content5 cid-rilmKbDRjr mbr-parallax-background  mb-2" id="content5-1c">
     <div class="container">

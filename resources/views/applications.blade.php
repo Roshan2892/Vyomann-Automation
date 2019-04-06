@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('css') @endsection
-@section('title') - Applications @endsection
+@section('title') Applications - @endsection
 @section('content')
     <section class="mbr-section content5 cid-rilaYmvhbp mbr-parallax-background" id="content5-h">
         <div class="container">

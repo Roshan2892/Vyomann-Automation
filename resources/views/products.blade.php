@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('css') @endsection
-@section('title') - Products @endsection
+@section('title') Products - @endsection
 @section('content')
     <section class="mbr-section content5 cid-rilcHRASZE mbr-parallax-background" id="content5-m">
         <div class="container">
@@ -28,7 +28,7 @@
                                     <img src="{{ asset('storage/'.$product->banner_image) }}" alt="" class="img-responsive">
                                 </div>
                                 <div class="card-box">
-                                    <h4 class="card-title mbr-fonts-style display-7">
+                                    <h4 class="card-title mbr-fonts-style display-7 pt-3">
                                         {{ $product->title }}
                                     </h4>
                                     <p class="mbr-text mbr-fonts-style display-7">

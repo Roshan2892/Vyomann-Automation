@@ -15,7 +15,7 @@
 }
 
 body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
-.logo img{ width: 130px;}
+.logo img{ width: 185px;padding:6px;}
 .contact-div{
   border-right: 4px solid #ff6600;
 }
@@ -31,7 +31,6 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
 
 .application-div{background-color: #fff !important;}
 
-.logo{padding:6px;}
 .social-list{    padding-top: 15px;}
 .socicon {font-size:27px; color:#333333;}
 
@@ -88,8 +87,8 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
 /* Products page */
 .cid-rild8axaz1{padding-top: 60px;}
 .cid-rild8axaz1 .media-container-row{justify-content: left;}
-.cid-rild8axaz1 .card-wrapper{height: 520px; max-height: 520px;}
-.cid-rild8axaz1 h4.display-7{font-family: 'Roboto Condensed Bold', sans-serif;font-size: 26px; line-height: 35px;}
+.cid-rild8axaz1 .card-wrapper{height: 540px; max-height: 540px;}
+.cid-rild8axaz1 h4.display-7{font-family: 'Roboto Condensed Bold', sans-serif;font-size: 25px; line-height: 30px;}
 .cid-rild8axaz1 p.display-7{font-family: 'Roboto Condensed Light', sans-serif;font-weight: 600; font-size: 18px;}
 .cid-rild8axaz1 img{ max-height: 350px; height:350px;object-fit: contain;}
 .cid-rild8axaz1 .card-img {border-bottom: 1px solid #eae2e2; }
@@ -152,7 +151,7 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
 	.contact-div{
 	  border-right: 0px;
 	}
-	.logo{text-align: center;}
+	/* .logo{text-align: center;} */
   	.socicon{text-align: center;margin-bottom: 0px;}
   .product-icons{display: none;}
   .collapsing {
@@ -164,16 +163,12 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
 
 @media only screen and (max-width: 580px) {
   body{font-size: 15px;}
-  .logo img{ width: 115px;}
   .cid-ril3yc4pgM button.navbar-toggler{top: 1.4rem;}
   .product-links { display: none; }
   #specifications{display: block; }
   #video{display: block; }
   #attachments{display: block; }
   #gallery{display: block; }
-  .logo{text-align: center;}
-  
-  .socicon{text-align: center;margin-bottom: 0px;font-size: 23px;}
 
   /* Home page */
   .cid-ril8ADp4sV{padding: 45px 0 25px 0;}
@@ -215,5 +210,9 @@ body{ background: #fff; /* font-family: Advent Pro Semi Bold, sans-serif; */}
   .cid-ril3yc4pgM .nav-link {
     font-size: 15px;
   }
+  .navbar .container-fluid{ display: block; }
+  .logo, .social-list { text-align: center; }
+  .logo img { width: 200px; padding: 0px; }
+  .socicon{text-align: center;margin-bottom: 0px;font-size: 20px;}
 }
 

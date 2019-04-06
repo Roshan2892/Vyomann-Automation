@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('css') @endsection
-@section('title') @endsection
+@section('title') Home - @endsection
 @section('content')
     <section class="carousel slide cid-ripCC9sqDe" data-interval="false" id="slider1-1m">
         <div class="full-screen">
