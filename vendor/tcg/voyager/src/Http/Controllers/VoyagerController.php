@@ -9,6 +9,8 @@ use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
 use TCG\Voyager\Facades\Voyager;
 use App\Model\Contact;
+use App\Mail\ContactEmail;
+use Illuminate\Support\Facades\Mail;
 
 class VoyagerController extends Controller
 {
@@ -77,12 +79,21 @@ class VoyagerController extends Controller
     }
 
     public function replyToContact($id){
+        
         $contact = Contact::findOrFail($id);
 
         return Voyager::view('voyager::contact', compact('contact'));
     }
 
     public function sendReply(Request $request){
-        dd($request->all());    
+        $contactData = new \stdClass();
+        $contactData->emailTo = $request->email_to;
+        $contactData->emailFrom = $request->email_from;
+        $contactData->sender = 'Vyomann Automation';
+        $contactData->message = $request->message;
+
+        Mail::to($contactData->emailTo)->send(new ContactEmail($contactData));
+
+        return redirect('/admin/contact');
     }
 }

@@ -10,3 +10,6 @@ npm-debug.log
 yarn-error.log
 .env
 changes.txt
+private key.txt
+Ca bundle.txt
+certificate.txt

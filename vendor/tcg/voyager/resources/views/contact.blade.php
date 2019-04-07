@@ -37,13 +37,13 @@
 
                             <div class="form-group  col-md-12">
                                 <label for="name">Message</label>
-                                <textarea class="form-control richTextBox" name="message" id="richtextmessage">
+                                <textarea class="form-control" name="message">
                                 </textarea>
                             </div>
                         </div><!-- panel-body -->
 
                         <div class="panel-footer">
-                            <button type="submit" class="btn btn-primary save">{{ __('Reply') }}</button>
+                            <input type="submit" class="btn btn-primary save" value="{{ __('Reply') }}">
                         </div>
                     </form>
 
