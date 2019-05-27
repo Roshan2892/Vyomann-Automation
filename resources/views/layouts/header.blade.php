@@ -16,7 +16,7 @@
                     <span class="px-2 socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
                 </a>
                 <a href="#" target="_blank">
-                    <span class="px-2 socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                    <span class="px-2 socicon-linkedin socicon mbr-iconfont mbr-iconfont-social"></span>
                 </a>
                 <a href="#" target="_blank">
                     <span class="px-2 socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
@@ -55,9 +55,9 @@
                 <li class="nav-item @if(Route::currentRouteName() == 'products') active @endif">
                     <a class="nav-link link text-white display-4" href="{{ route('products') }}">PRODUCTS</a>
                 </li>
-                <li class="nav-item @if(Route::currentRouteName() == 'consultancy') active @endif">
+                <!-- <li class="nav-item @if(Route::currentRouteName() == 'consultancy') active @endif">
                     <a class="nav-link link text-white display-4" href="{{ route('consultancy') }}">CONSULTANCY</a>
-                </li>
+                </li> -->
                 <li class="nav-item @if(Route::currentRouteName() == 'contact') active @endif">
                     <a class="nav-link link text-white display-4" href="{{ route('contact') }}">CONTACT US</a>
                 </li>
