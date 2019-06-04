@@ -9,16 +9,16 @@
                 </div>
             </div>
             <div class="social-list pl-0 mb-0">
-                <a href="#" target="_blank">
+                <a href="https://www.facebook.com/Vyomann-Automation-608721072974865" target="_blank">
                     <span class="px-2 socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/vyomann_automation/" target="_blank">
                     <span class="px-2 socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
                 </a>
                 <a href="#" target="_blank">
                     <span class="px-2 socicon-linkedin socicon mbr-iconfont mbr-iconfont-social"></span>
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://www.youtube.com/channel/UCpVqzg1liNteD3gwXFJmg0w?view_as=subscriber" target="_blank">
                     <span class="px-2 socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
                 </a>
             </div>
