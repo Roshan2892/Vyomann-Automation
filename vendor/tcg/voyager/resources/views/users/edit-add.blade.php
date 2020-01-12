@@ -1,6 +1,6 @@
 @extends('voyager::master')
 
-@section('page_title', __('voyager::generic.'.(isset($dataTypeContent->id) ? 'edit' : 'add')).' '.$dataType->display_name_singular)
+@section('page_title', __('voyager::generic.'.(isset($dataTypeContent->id) ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular'))
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -9,14 +9,14 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
-        {{ __('voyager::generic.'.(isset($dataTypeContent->id) ? 'edit' : 'add')).' '.$dataType->display_name_singular }}
+        {{ __('voyager::generic.'.(isset($dataTypeContent->id) ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular') }}
     </h1>
 @stop
 
 @section('content')
     <div class="page-content container-fluid">
         <form class="form-edit-add" role="form"
-              action="{{ (isset($dataTypeContent->id)) ? route('voyager.'.$dataType->slug.'.update', $dataTypeContent->id) : route('voyager.'.$dataType->slug.'.store') }}"
+              action="@if(!is_null($dataTypeContent->getKey())){{ route('voyager.'.$dataType->slug.'.update', $dataTypeContent->getKey()) }}@else{{ route('voyager.'.$dataType->slug.'.store') }}@endif"
               method="POST" enctype="multipart/form-data" autocomplete="off">
             <!-- PUT Method if we are editing -->
             @if(isset($dataTypeContent->id))
@@ -42,13 +42,13 @@
                             <div class="form-group">
                                 <label for="name">{{ __('voyager::generic.name') }}</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="{{ __('voyager::generic.name') }}"
-                                       value="@if(isset($dataTypeContent->name)){{ $dataTypeContent->name }}@endif">
+                                       value="{{ old('name', $dataTypeContent->name ?? '') }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">{{ __('voyager::generic.email') }}</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="{{ __('voyager::generic.email') }}"
-                                       value="@if(isset($dataTypeContent->email)){{ $dataTypeContent->email }}@endif">
+                                       value="{{ old('email', $dataTypeContent->email ?? '') }}">
                             </div>
 
                             <div class="form-group">
@@ -67,7 +67,7 @@
                                         $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
 
                                         $row     = $dataTypeRows->where('field', 'user_belongsto_role_relationship')->first();
-                                        $options = json_decode($row->details);
+                                        $options = $row->details;
                                     @endphp
                                     @include('voyager::formfields.relationship')
                                 </div>
@@ -75,7 +75,7 @@
                                     <label for="additional_roles">{{ __('voyager::profile.roles_additional') }}</label>
                                     @php
                                         $row     = $dataTypeRows->where('field', 'user_belongstomany_role_relationship')->first();
-                                        $options = json_decode($row->details);
+                                        $options = $row->details;
                                     @endphp
                                     @include('voyager::formfields.relationship')
                                 </div>

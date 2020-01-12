@@ -60,6 +60,7 @@ versions of composer and if found, installs the latest.
 
 <info>php composer.phar self-update</info>
 
+Read more at https://getcomposer.org/doc/03-cli.md#self-update-selfupdate-
 EOT
             )
         ;
@@ -220,7 +221,7 @@ TAGSPUBKEY
 
             $pubkeyid = openssl_pkey_get_public($sigFile);
             $algo = defined('OPENSSL_ALGO_SHA384') ? OPENSSL_ALGO_SHA384 : 'SHA384';
-            if (!in_array('SHA384', openssl_get_md_methods())) {
+            if (!in_array('sha384', array_map('strtolower', openssl_get_md_methods()))) {
                 throw new \RuntimeException('SHA384 is not supported by your openssl extension, could not verify the phar file integrity');
             }
             $signature = json_decode($signature, true);
@@ -253,6 +254,8 @@ TAGSPUBKEY
         } else {
             $io->writeError('<warning>A backup of the current version could not be written to '.$backupFile.', no rollback possible</warning>');
         }
+
+        return 0;
     }
 
     protected function fetchKeys(IOInterface $io, Config $config)

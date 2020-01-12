@@ -4,7 +4,6 @@ namespace TCG\Voyager\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Intervention\Image\ImageServiceProviderLaravel5;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Process\Process;
 use TCG\Voyager\Providers\VoyagerDummyServiceProvider;
@@ -34,6 +33,7 @@ class InstallCommand extends Command
     protected function getOptions()
     {
         return [
+            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production', null],
             ['with-dummy', null, InputOption::VALUE_NONE, 'Install with dummy data', null],
         ];
     }
@@ -69,13 +69,12 @@ class InstallCommand extends Command
         $this->info('Publishing the Voyager assets, database, and config files');
 
         // Publish only relevant resources on install
-        $tags = ['voyager_assets', 'seeds'];
+        $tags = ['seeds'];
 
         $this->call('vendor:publish', ['--provider' => VoyagerServiceProvider::class, '--tag' => $tags]);
-        $this->call('vendor:publish', ['--provider' => ImageServiceProviderLaravel5::class]);
 
         $this->info('Migrating the database tables into your application');
-        $this->call('migrate');
+        $this->call('migrate', ['--force' => $this->option('force')]);
 
         $this->info('Attempting to set Voyager User model as parent to App\User');
         if (file_exists(app_path('User.php'))) {
@@ -126,7 +125,7 @@ class InstallCommand extends Command
             $this->info('Seeding dummy data');
             $this->seed('VoyagerDummyDatabaseSeeder');
         } else {
-            $this->call('vendor:publish', ['--provider' => VoyagerServiceProvider::class, '--tag' => 'config']);
+            $this->call('vendor:publish', ['--provider' => VoyagerServiceProvider::class, '--tag' => ['config', 'voyager_avatar']]);
         }
 
         $this->info('Setting up the hooks');

@@ -47,16 +47,16 @@ class GitHubDriver extends VcsDriver
      */
     public function initialize()
     {
-        preg_match('#^(?:(?:https?|git)://([^/]+)/|git@([^:]+):)([^/]+)/(.+?)(?:\.git|/)?$#', $this->url, $match);
+        preg_match('#^(?:(?:https?|git)://([^/]+)/|git@([^:]+):/?)([^/]+)/(.+?)(?:\.git|/)?$#', $this->url, $match);
         $this->owner = $match[3];
         $this->repository = $match[4];
-        $this->originUrl = !empty($match[1]) ? $match[1] : $match[2];
+        $this->originUrl = strtolower(!empty($match[1]) ? $match[1] : $match[2]);
         if ($this->originUrl === 'www.github.com') {
             $this->originUrl = 'github.com';
         }
         $this->cache = new Cache($this->io, $this->config->get('cache-repo-dir').'/'.$this->originUrl.'/'.$this->owner.'/'.$this->repository);
 
-        if (isset($this->repoConfig['no-api']) && $this->repoConfig['no-api']) {
+        if ( $this->config->get('use-github-api') === false || (isset($this->repoConfig['no-api']) && $this->repoConfig['no-api'] ) ){
             $this->setupGitDriver($this->url);
 
             return;
@@ -152,8 +152,8 @@ class GitHubDriver extends VcsDriver
             }
 
             $composer = $this->getBaseComposerInformation($identifier);
-            if ($composer) {
 
+            if ($composer) {
                 // specials for github
                 if (!isset($composer['support']['source'])) {
                     $label = array_search($identifier, $this->getTags()) ?: array_search($identifier, $this->getBranches()) ?: $identifier;
@@ -183,30 +183,13 @@ class GitHubDriver extends VcsDriver
             return $this->gitDriver->getFileContent($file, $identifier);
         }
 
-        $notFoundRetries = 2;
-        while ($notFoundRetries) {
-            try {
-                $resource = $this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository.'/contents/' . $file . '?ref='.urlencode($identifier);
-                $resource = JsonFile::parseJson($this->getContents($resource));
-                if (empty($resource['content']) || $resource['encoding'] !== 'base64' || !($content = base64_decode($resource['content']))) {
-                    throw new \RuntimeException('Could not retrieve ' . $file . ' for '.$identifier);
-                }
-
-                return $content;
-            } catch (TransportException $e) {
-                if (404 !== $e->getCode()) {
-                    throw $e;
-                }
-
-                // TODO should be removed when possible
-                // retry fetching if github returns a 404 since they happen randomly
-                $notFoundRetries--;
-
-                return null;
-            }
+        $resource = $this->getApiUrl() . '/repos/'.$this->owner.'/'.$this->repository.'/contents/' . $file . '?ref='.urlencode($identifier);
+        $resource = JsonFile::parseJson($this->getContents($resource));
+        if (empty($resource['content']) || $resource['encoding'] !== 'base64' || !($content = base64_decode($resource['content']))) {
+            throw new \RuntimeException('Could not retrieve ' . $file . ' for '.$identifier);
         }
 
-        return null;
+        return $content;
     }
 
     /**
@@ -284,12 +267,12 @@ class GitHubDriver extends VcsDriver
      */
     public static function supports(IOInterface $io, Config $config, $url, $deep = false)
     {
-        if (!preg_match('#^((?:https?|git)://([^/]+)/|git@([^:]+):)([^/]+)/(.+?)(?:\.git|/)?$#', $url, $matches)) {
+        if (!preg_match('#^((?:https?|git)://([^/]+)/|git@([^:]+):/?)([^/]+)/(.+?)(?:\.git|/)?$#', $url, $matches)) {
             return false;
         }
 
         $originUrl = !empty($matches[2]) ? $matches[2] : $matches[3];
-        if (!in_array(preg_replace('{^www\.}i', '', $originUrl), $config->get('github-domains'))) {
+        if (!in_array(strtolower(preg_replace('{^www\.}i', '', $originUrl)), $config->get('github-domains'))) {
             return false;
         }
 
@@ -321,6 +304,10 @@ class GitHubDriver extends VcsDriver
      */
     protected function generateSshUrl()
     {
+        if (false !== strpos($this->originUrl, ':')) {
+            return 'ssh://git@' . $this->originUrl . '/'.$this->owner.'/'.$this->repository.'.git';
+        }
+
         return 'git@' . $this->originUrl . ':'.$this->owner.'/'.$this->repository.'.git';
     }
 
@@ -378,7 +365,7 @@ class GitHubDriver extends VcsDriver
                         return $this->attemptCloneFallback();
                     }
 
-                    $rateLimited = $githubUtil->isRateLimited($e->getHeaders());
+                    $rateLimited = $gitHubUtil->isRateLimited($e->getHeaders());
 
                     if (!$this->io->hasAuthentication($this->originUrl)) {
                         if (!$this->io->isInteractive()) {
@@ -392,7 +379,7 @@ class GitHubDriver extends VcsDriver
                     }
 
                     if ($rateLimited) {
-                        $rateLimit = $githubUtil->getRateLimit($e->getHeaders());
+                        $rateLimit = $gitHubUtil->getRateLimit($e->getHeaders());
                         $this->io->writeError(sprintf(
                             '<error>GitHub API limit (%d calls/hr) is exhausted. You are already authorized so you have to wait until %s before doing more requests</error>',
                             $rateLimit['limit'],

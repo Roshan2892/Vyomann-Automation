@@ -162,7 +162,7 @@ class ClassMapGenerator
         }
 
         // strip heredocs/nowdocs
-        $contents = preg_replace('{<<<\s*(\'?)(\w+)\\1(?:\r\n|\n|\r)(?:.*?)(?:\r\n|\n|\r)\\2(?=\r\n|\n|\r|;)}s', 'null', $contents);
+        $contents = preg_replace('{<<<[ \t]*([\'"]?)(\w+)\\1(?:\r\n|\n|\r)(?:.*?)(?:\r\n|\n|\r)(?:\s*)\\2(?=\s+|[;,.)])}s', 'null', $contents);
         // strip strings
         $contents = preg_replace('{"[^"\\\\]*+(\\\\.[^"\\\\]*+)*+"|\'[^\'\\\\]*+(\\\\.[^\'\\\\]*+)*+\'}s', 'null', $contents);
         // strip leading non-php code if needed
@@ -173,7 +173,7 @@ class ClassMapGenerator
             }
         }
         // strip non-php blocks in the file
-        $contents = preg_replace('{\?>.+<\?}s', '?><?', $contents);
+        $contents = preg_replace('{\?>(?:[^<]++|<(?!\?))*+<\?}s', '?><?', $contents);
         // strip trailing non-php code if needed
         $pos = strrpos($contents, '?>');
         if (false !== $pos && false === strpos(substr($contents, $pos), '<?')) {

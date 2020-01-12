@@ -4,11 +4,13 @@ namespace TCG\Voyager\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
+use League\Flysystem\Util;
 use TCG\Voyager\Facades\Voyager;
-use App\Model\Contact;
 
 class VoyagerController extends Controller
 {
@@ -23,8 +25,6 @@ class VoyagerController extends Controller
 
         return redirect()->route('voyager.login');
     }
-
-    
 
     public function upload(Request $request)
     {
@@ -53,8 +53,11 @@ class VoyagerController extends Controller
                 ->resize($resizeWidth, $resizeHeight, function (Constraint $constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
-                })
-                ->encode($file->getClientOriginalExtension(), 75);
+                });
+            if ($ext !== 'gif') {
+                $image->orientate();
+            }
+            $image->encode($file->getClientOriginalExtension(), 75);
 
             // move uploaded file from temp to uploads directory
             if (Storage::disk(config('voyager.storage.disk'))->put($fullPath, (string) $image, 'public')) {
@@ -71,18 +74,31 @@ class VoyagerController extends Controller
         return "<script> parent.helpers.setImageValue('".Voyager::image($fullFilename)."'); </script>";
     }
 
-    public function profile()
+    public function assets(Request $request)
     {
-        return Voyager::view('voyager::profile');
-    }
+        try {
+            $path = dirname(__DIR__, 3).'/publishable/assets/'.Util::normalizeRelativePath(urldecode($request->path));
+        } catch (\LogicException $e) {
+            abort(404);
+        }
 
-    public function replyToContact($id){
-        $contact = Contact::findOrFail($id);
+        if (File::exists($path)) {
+            $mime = '';
+            if (Str::endsWith($path, '.js')) {
+                $mime = 'text/javascript';
+            } elseif (Str::endsWith($path, '.css')) {
+                $mime = 'text/css';
+            } else {
+                $mime = File::mimeType($path);
+            }
+            $response = response(File::get($path), 200, ['Content-Type' => $mime]);
+            $response->setSharedMaxAge(31536000);
+            $response->setMaxAge(31536000);
+            $response->setExpires(new \DateTime('+1 year'));
 
-        return Voyager::view('voyager::contact', compact('contact'));
-    }
+            return $response;
+        }
 
-    public function sendReply(Request $request){
-        dd($request->all());    
+        return response('', 404);
     }
 }

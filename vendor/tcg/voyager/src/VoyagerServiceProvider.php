@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 use Intervention\Image\ImageServiceProvider;
 use Larapack\DoctrineSupport\DoctrineSupportServiceProvider;
 use Larapack\VoyagerHooks\VoyagerHooksServiceProvider;
@@ -38,6 +42,15 @@ class VoyagerServiceProvider extends ServiceProvider
         MenuItem::class => MenuItemPolicy::class,
     ];
 
+    protected $gates = [
+        'browse_admin',
+        'browse_bread',
+        'browse_database',
+        'browse_media',
+        'browse_compass',
+        'browse_hooks',
+    ];
+
     /**
      * Register the application services.
      */
@@ -54,6 +67,10 @@ class VoyagerServiceProvider extends ServiceProvider
 
         $this->app->singleton('voyager', function () {
             return new Voyager();
+        });
+
+        $this->app->singleton('VoyagerGuard', function () {
+            return config('auth.defaults.guard', 'web');
         });
 
         $this->loadHelpers();
@@ -81,10 +98,10 @@ class VoyagerServiceProvider extends ServiceProvider
     public function boot(Router $router, Dispatcher $event)
     {
         if (config('voyager.user.add_default_role_on_register')) {
-            $app_user = config('voyager.user.namespace') ?: config('auth.providers.users.model');
-            $app_user::created(function ($user) {
+            $model = Auth::guard(app('VoyagerGuard'))->getProvider()->getModel();
+            call_user_func($model.'::created', function ($user) use ($model) {
                 if (is_null($user->role_id)) {
-                    VoyagerFacade::model('User')->findOrFail($user->id)
+                    call_user_func($model.'::findOrFail', $user->id)
                         ->setRole(config('voyager.user.default_role'))
                         ->save();
                 }
@@ -97,13 +114,15 @@ class VoyagerServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/../publishable/lang'), 'voyager');
 
-        if (config('app.env') == 'testing') {
-            $this->loadMigrationsFrom(realpath(__DIR__.'/migrations'));
+        if (config('voyager.database.autoload_migrations', true)) {
+            if (config('app.env') == 'testing') {
+                $this->loadMigrationsFrom(realpath(__DIR__.'/migrations'));
+            }
+
+            $this->loadMigrationsFrom(realpath(__DIR__.'/../migrations'));
         }
 
-        $this->loadMigrationsFrom(realpath(__DIR__.'/../migrations'));
-
-        $this->registerGates();
+        $this->loadAuth();
 
         $this->registerViewComposers();
 
@@ -145,7 +164,7 @@ class VoyagerServiceProvider extends ServiceProvider
         } else {
             $currentRouteAction = null;
         }
-        $routeName = is_array($currentRouteAction) ? array_get($currentRouteAction, 'as') : null;
+        $routeName = is_array($currentRouteAction) ? Arr::get($currentRouteAction, 'as') : null;
 
         if ($routeName != 'voyager.dashboard') {
             return;
@@ -199,7 +218,7 @@ class VoyagerServiceProvider extends ServiceProvider
         $components = ['title', 'text', 'button'];
 
         foreach ($components as $component) {
-            $class = 'TCG\\Voyager\\Alert\\Components\\'.ucfirst(camel_case($component)).'Component';
+            $class = 'TCG\\Voyager\\Alert\\Components\\'.ucfirst(Str::camel($component)).'Component';
 
             $this->app->bind("voyager.alert.components.{$component}", $class);
         }
@@ -226,8 +245,8 @@ class VoyagerServiceProvider extends ServiceProvider
         $publishablePath = dirname(__DIR__).'/publishable';
 
         $publishable = [
-            'voyager_assets' => [
-                "{$publishablePath}/assets/" => public_path(config('voyager.assets_path')),
+            'voyager_avatar' => [
+                "{$publishablePath}/dummy_content/users/" => storage_path('app/public/users'),
             ],
             'seeds' => [
                 "{$publishablePath}/database/seeds/" => database_path('seeds'),
@@ -250,13 +269,15 @@ class VoyagerServiceProvider extends ServiceProvider
         );
     }
 
-    public function registerGates()
+    public function loadAuth()
     {
+        // DataType Policies
+
         // This try catch is necessary for the Package Auto-discovery
         // otherwise it will throw an error because no database
         // connection has been made yet.
         try {
-            if (Schema::hasTable('data_types')) {
+            if (Schema::hasTable(VoyagerFacade::model('DataType')->getTable())) {
                 $dataType = VoyagerFacade::model('DataType');
                 $dataTypes = $dataType->select('policy_name', 'model_name')->get();
 
@@ -273,7 +294,14 @@ class VoyagerServiceProvider extends ServiceProvider
                 $this->registerPolicies();
             }
         } catch (\PDOException $e) {
-            Log::error('No Database connection yet in VoyagerServiceProvider registerGates()');
+            Log::error('No Database connection yet in VoyagerServiceProvider loadAuth()');
+        }
+
+        // Gates
+        foreach ($this->gates as $gate) {
+            Gate::define($gate, function ($user) use ($gate) {
+                return $user->hasPermission($gate);
+            });
         }
     }
 
@@ -281,11 +309,13 @@ class VoyagerServiceProvider extends ServiceProvider
     {
         $formFields = [
             'checkbox',
+            'multiple_checkbox',
             'color',
             'date',
             'file',
             'image',
             'multiple_images',
+            'media_picker',
             'number',
             'password',
             'radio_btn',
@@ -303,7 +333,7 @@ class VoyagerServiceProvider extends ServiceProvider
         ];
 
         foreach ($formFields as $formField) {
-            $class = studly_case("{$formField}_handler");
+            $class = Str::studly("{$formField}_handler");
 
             VoyagerFacade::addFormField("TCG\\Voyager\\FormFields\\{$class}");
         }
